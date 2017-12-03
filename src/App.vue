@@ -12,7 +12,7 @@
       </div>
       <div class="col-sm-6 text-center">
         Todos will go here
-        <todo-list></todo-list>
+        <todo-list v-bind:todos="todos"></todo-list>
       </div>
     </div>
   </div>
@@ -27,6 +27,27 @@ export default {
   components: {
     ComparisonChart,
     TodoList,
+  },
+  data() {
+    return {
+      todos: [{
+        project: 'Project 1',
+        description: 'Description 1',
+        completed: false,
+      }, {
+        project: 'Project 2',
+        description: 'Description 2',
+        completed: true,
+      }, {
+        project: 'Project 3',
+        description: 'Description 3',
+        completed: true,
+      }, {
+        project: 'Project 4',
+        description: 'Description 4',
+        completed: true,
+      }],
+    };
   },
 };
 </script>
