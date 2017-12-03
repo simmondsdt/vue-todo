@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <br />
+    <div class="container text-center">
+      <h2>My Todo List</h2>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        Chart will go here
+      </div>
+      <div class="col-sm-6 text-center">
+        Todos will go here
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
   name: 'app',
   components: {
-    HelloWorld,
   },
 };
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
