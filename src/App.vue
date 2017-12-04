@@ -12,6 +12,8 @@
         </div>
         <div class="col-sm-4">
           Comparison Chart
+          <br />
+          <chart></chart>
         </div>
       </div>
     </div>
@@ -19,12 +21,14 @@
 </template>
 
 <script>
+import Chart from './components/Chart';
 import CreateTodo from './components/CreateTodo';
 import TodoList from './components/TodoList';
 
 export default {
   name: 'app',
   components: {
+    Chart,
     CreateTodo,
     TodoList,
   },
