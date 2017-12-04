@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card w-75 text-center">
+    <div id="card" class="card w-50 text-center">
       <div class="card-header" v-show="!isEditing">
         <div class="row">
           <div class="col-sm-2">
@@ -34,7 +34,7 @@
           <input type="text" v-model="todo.description">
         </div>
         <div>
-          <button class="btn" v-on:click="hideForm">
+          <button class="btn btn-primary" v-on:click="hideForm">
             Close X
           </button>
         </div>
@@ -76,4 +76,7 @@
 </script>
 
 <style>
+#card {
+  margin-left: 150px;
+}
 </style>

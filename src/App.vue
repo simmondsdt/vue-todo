@@ -4,9 +4,9 @@
     <div class="container text-center">
       <h2>My Todo List</h2>
       <br />
+      <create-todo v-on:create-todo="createTodo"></create-todo>
       <div class="row">
         <div class="col-sm-8">
-          <create-todo v-on:create-todo="createTodo"></create-todo>
           <br />
           <todo-list v-bind:todos="todos"></todo-list>
         </div>
