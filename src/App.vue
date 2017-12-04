@@ -21,14 +21,12 @@
 </template>
 
 <script>
-import Chart from './components/Chart';
 import CreateTodo from './components/CreateTodo';
 import TodoList from './components/TodoList';
 
 export default {
   name: 'app',
   components: {
-    Chart,
     CreateTodo,
     TodoList,
   },
