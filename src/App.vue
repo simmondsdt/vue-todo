@@ -1,31 +1,27 @@
 <template>
   <div id="app">
     <br />
-    <div id="title" class="container text-center">
+    <div class="container text-center">
       <h2>My Todo List</h2>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-sm-6 text-center">
-        Chart will go here
-        <comparison-chart></comparison-chart>
-      </div>
-      <div class="col-sm-6 text-center">
-        Todos will go here
-        <todo-list v-bind:todos="todos"></todo-list>
+      <br />
+      <div class="row">
+        <div class="col-sm-8">
+          <todo-list v-bind:todos="todos"></todo-list>
+        </div>
+        <div class="col-sm-4">
+          Comparison Chart
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ComparisonChart from './components/ComparisonChart';
 import TodoList from './components/TodoList';
 
 export default {
   name: 'app',
   components: {
-    ComparisonChart,
     TodoList,
   },
   data() {
@@ -41,7 +37,7 @@ export default {
       }, {
         project: 'Project 3',
         description: 'Description 3',
-        completed: true,
+        completed: false,
       }, {
         project: 'Project 4',
         description: 'Description 4',
