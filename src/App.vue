@@ -6,6 +6,8 @@
       <br />
       <div class="row">
         <div class="col-sm-8">
+          <create-todo v-on:create-todo="createTodo"></create-todo>
+          <br />
           <todo-list v-bind:todos="todos"></todo-list>
         </div>
         <div class="col-sm-4">
@@ -17,33 +19,24 @@
 </template>
 
 <script>
+import CreateTodo from './components/CreateTodo';
 import TodoList from './components/TodoList';
 
 export default {
   name: 'app',
   components: {
+    CreateTodo,
     TodoList,
   },
   data() {
     return {
-      todos: [{
-        project: 'Project 1',
-        description: 'Description 1',
-        completed: false,
-      }, {
-        project: 'Project 2',
-        description: 'Description 2',
-        completed: true,
-      }, {
-        project: 'Project 3',
-        description: 'Description 3',
-        completed: false,
-      }, {
-        project: 'Project 4',
-        description: 'Description 4',
-        completed: true,
-      }],
+      todos: [],
     };
+  },
+  methods: {
+    createTodo(newTodo) {
+      this.todos.push(newTodo);
+    },
   },
 };
 </script>
