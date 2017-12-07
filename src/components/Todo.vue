@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="card" class="card w-50 text-center">
+    <div id="card" class="card w-75 text-center">
       <div class="card-header" v-show="!isEditing">
         <div class="row">
           <div class="col-sm-2">
@@ -18,9 +18,9 @@
             </div>
           </div>
           <div class="col-sm-10">
-            <div>{{ todo.project }}</div>
-            <div>{{ todo.description }}</div>
-            <div>{{ todo.completed }}</div>
+            <div>Name: {{ todo.project }}</div>
+            <div>Description: {{ todo.description }}</div>
+            <div>Completed: {{ todo.completed }}</div>
           </div>
         </div>
       </div>
