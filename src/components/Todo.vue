@@ -1,7 +1,7 @@
 <template>
   <div class="row">
-    <div class="col-sm-11">
-      <div class="card text-center">
+    <div class="col-sm-12">
+      <div class="card bg-light text-center">
         <div class="row">
           <div class="col-sm-2">
             <span v-on:click="deleteTodo(todo)">
@@ -10,7 +10,7 @@
           </div>
           <div class="col-sm-8">
             <div>{{ todo.project }}</div>
-            <div>Description: {{ todo.description }}</div>
+            <div>Notes: {{ todo.notes }}</div>
           </div>
           <div class="col-sm-2">
             <span v-on:click="checkTodo(todo)">
@@ -28,13 +28,10 @@
 <script>
   export default {
     props: ['todo'],
-    data() {
-      return {
-        isEditing: false,
-      };
-    },
     methods: {
       deleteTodo(todo) {
+        // eslint-disable-next-line
+        alert('Are you sure you want to delete?');
         this.$emit('delete-todo', todo);
       },
       checkTodo(todo) {
@@ -50,6 +47,6 @@
 
 <style>
 .fa {
-  margin-top: 15px;
+  margin-top: 17px;
 }
 </style>

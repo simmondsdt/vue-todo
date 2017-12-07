@@ -25,13 +25,9 @@ export default {
     return {
       todos: [
         {
-          project: 'Go Shopping',
-          description: 'Tuesday',
+          project: 'Create a Todo',
+          notes: "Click on the 'Create' button above!",
           completed: false,
-        }, {
-          project: 'Call Phil',
-          description: 'Dont forget about party',
-          completed: true,
         },
       ],
     };

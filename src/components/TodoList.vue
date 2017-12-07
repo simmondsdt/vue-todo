@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div class="row">
-      <div id="todo" class="col-sm-7">
+      <div class="col-sm-6">
         <todo v-on:delete-todo="deleteTodo" v-on:complete-todo="completeTodo" v-on:revert-todo="revertTodo" v-for="todo in todos" v-bind:todo="todo" :key="todo.id"></todo>
       </div>
-      <div class="col-sm-5">
-        <bar-chart v-bind:todos="todos"></bar-chart>
+      <div class="col-sm-6">
+        <bar-chart class="card bg-light" v-bind:todos="todos"></bar-chart>
       </div>
     </div>
   </div>
@@ -37,9 +37,3 @@
     },
   };
 </script>
-
-<style>
-#todo {
-  padding-right: -50px;
-}
-</style>
