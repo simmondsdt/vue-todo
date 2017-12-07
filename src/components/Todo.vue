@@ -1,52 +1,27 @@
 <template>
-  <div>
-    <div id="card" class="card w-75 text-center">
-      <div class="card-header" v-show="!isEditing">
+  <div class="row">
+    <div class="col-sm-11">
+      <div class="card text-center">
         <div class="row">
           <div class="col-sm-2">
-            <div class="row">
-              <div class="col-sm-5">
-                <span v-on:click="showForm">
-                  <i class="fa fa-pencil" aria-hidden="true"></i>
-                </span>
-              </div>
-              <div class="col-sm-5">
-                <span v-on:click="deleteTodo(todo)">
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-                </span>
-              </div>
-            </div>
+            <span v-on:click="deleteTodo(todo)">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </span>
           </div>
-          <div class="col-sm-10">
-            <div>Name: {{ todo.project }}</div>
+          <div class="col-sm-8">
+            <div>{{ todo.project }}</div>
             <div>Description: {{ todo.description }}</div>
-            <div>Completed: {{ todo.completed }}</div>
+          </div>
+          <div class="col-sm-2">
+            <span v-on:click="checkTodo(todo)">
+              <i v-show="todo.completed" class="fa fa-check-square-o" aria-hidden="true"></i>
+              <i v-show="!todo.completed" class="fa fa-square-o" aria-hidden="true"></i>
+            </span>
           </div>
         </div>
       </div>
-      <div class="card-body" v-show="isEditing">
-        <div>
-          <label>Project</label>
-          <input type="text" v-model="todo.project">
-        </div>
-        <div>
-          <label>Description</label>
-          <input type="text" v-model="todo.description">
-        </div>
-        <div>
-          <button class="btn btn-primary" v-on:click="hideForm">
-            Close X
-          </button>
-        </div>
-      </div>
-      <div class="btn btn-primary" v-show="!isEditing && todo.completed" disabled>
-        Completed
-      </div>
-      <div class="btn btn-danger" v-on:click="completeTodo(todo)" v-show="!isEditing && !todo.completed">
-        Pending
-      </div>
+      <br />
     </div>
-    <br />
   </div>
 </template>
 
@@ -59,21 +34,22 @@
       };
     },
     methods: {
-      showForm() {
-        this.isEditing = true;
-      },
-      hideForm() {
-        this.isEditing = false;
-      },
       deleteTodo(todo) {
         this.$emit('delete-todo', todo);
       },
-      completeTodo(todo) {
-        this.$emit('complete-todo', todo);
+      checkTodo(todo) {
+        if (todo.completed === true) {
+          this.$emit('revert-todo', todo);
+        } else {
+          this.$emit('complete-todo', todo);
+        }
       },
     },
   };
 </script>
 
 <style>
+.fa {
+  margin-top: 15px;
+}
 </style>

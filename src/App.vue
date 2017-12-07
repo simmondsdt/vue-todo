@@ -25,12 +25,12 @@ export default {
     return {
       todos: [
         {
-          project: '1',
-          description: '2',
+          project: 'Go Shopping',
+          description: 'Tuesday',
           completed: false,
         }, {
-          project: '2',
-          description: '1',
+          project: 'Call Phil',
+          description: 'Dont forget about party',
           completed: true,
         },
       ],
