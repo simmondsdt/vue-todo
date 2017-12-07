@@ -26,13 +26,35 @@
 </template>
 
 <script>
+  import swal from 'sweetalert2';
+
   export default {
     props: ['todo'],
     methods: {
       deleteTodo(todo) {
         // eslint-disable-next-line
-        alert('Are you sure you want to delete?');
-        this.$emit('delete-todo', todo);
+        swal({
+          title: 'Are you sure?',
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Yes, delete it!',
+          cancelButtonText: 'No, keep it',
+        }).then((result) => {
+          if (result.value) {
+            swal(
+              'Deleted!',
+              '',
+              'success',
+            );
+            this.$emit('delete-todo', todo);
+          } else if (result.dismiss === 'cancel') {
+            swal(
+              'Cancelled',
+              '',
+              'error',
+            );
+          }
+        });
       },
       checkTodo(todo) {
         if (todo.completed === true) {
